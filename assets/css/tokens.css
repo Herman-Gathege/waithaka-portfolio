@@ -5,7 +5,7 @@
 
 :root {
   /* --- Core palette (fixed brand values) --- */
-  --bg-dark: #1c1c1c;
+  --bg-dark: #171717;
   --bg-cream: #f5f1e8;
   --olive: #6b705c;
   --burnt-orange: #c96c3a;
@@ -14,8 +14,8 @@
   --gold: #b08d57;
 
   /* --- Derived surfaces --- */
-  --bg-dark-deep: #161616;
-  --bg-dark-soft: #242422;
+  --bg-dark-deep: #101010;
+  --bg-dark-soft: #1f1f1e;
   --bg-cream-deep: #ebe6da;
   --bg-cream-raised: #fbf9f4;
   --olive-tint: rgba(107, 112, 92, 0.12);
@@ -40,8 +40,8 @@
   --rule-on-light-strong: rgba(46, 46, 46, 0.28);
 
   /* --- Restrained glass --- */
-  --glass-bg: rgba(22, 22, 21, 0.82);
-  --glass-bg-soft: rgba(22, 22, 21, 0.55);
+  --glass-bg: rgba(17, 17, 17, 0.82);
+  --glass-bg-soft: rgba(17, 17, 17, 0.55);
   --glass-border: rgba(248, 246, 242, 0.14);
   --glass-blur: 14px;
 
@@ -122,8 +122,8 @@
   --rule-strong: var(--rule-on-dark-strong);
   --muted: var(--ink-on-dark-muted);
   --faint: var(--ink-on-dark-faint);
-  --panel: #212120;
-  --panel-hover: #272725;
+  --panel: #1d1d1c;
+  --panel-hover: #242423;
   --accent-ink: var(--burnt-orange);
 }
 

@@ -22,13 +22,22 @@ case-studies/_template/         Copy this to start a new case study (noindex, no
 
 ```bash
 npm run check     # links, metadata, alt text, sitemap, contrast — no dependencies
+npm run audit     # accessibility, tap targets, keyboard, no-JS, LCP/CLS/weight (needs Chrome)
 npm run serve     # http://localhost:4321 (python3 -m http.server)
 npm run qa        # headless-Chrome screenshots + overflow/console report (needs Chrome)
 ```
 
-`npm run qa` writes screenshots to `/tmp/anne-portfolio-qa` and reports horizontal overflow
-and console errors at 320, 390, 768 and 1440px. Add `--only index` or
-`--section "#introduction"` to narrow it down.
+`npm run qa` measures ten widths (320–1920px), keeps screenshots for 320/390/768/1440 in
+`/tmp/anne-portfolio-qa`, and fails on horizontal overflow, clipped content, broken images
+or console errors. Add `--only index` or `--section "#introduction"` to narrow it down.
+
+`npm run audit` writes `/tmp/anne-audit.json` and prints findings per page: heading outline,
+duplicate ids, JSON-LD, network 4xx/5xx, LCP/CLS and byte weight, tap-target sizes, a
+keyboard walk with focus-ring contrast, mobile-menu behaviour and a no-JavaScript pass.
+Both tools share `tools/lib/harness.mjs`.
+
+The audit reports from the last full pass are in `PORTFOLIO-QA-BASELINE.md` and
+`PORTFOLIO-QA-FINAL.md`.
 
 ## Structure
 
@@ -44,7 +53,9 @@ images/optimized/       Resized WebP + JPEG derivatives used by the pages
 images/og-card.jpg      Social preview card
 docs/Anne-Waithaka-CV.pdf
 tools/check-site.mjs    Static validation (run before every deploy)
-tools/qa-visual.mjs     Local visual QA harness
+tools/audit-site.mjs    Browser audit: accessibility, performance, keyboard, no-JS
+tools/qa-visual.mjs     Visual harness: screenshots, overflow, clipping, console
+tools/lib/harness.mjs   Shared static server, CDP client and page/viewport matrix
 CONTENT-CHECKLIST.md    What still needs a decision or new material
 ```
 

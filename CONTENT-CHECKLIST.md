@@ -63,6 +63,10 @@ or needs confirmation — nothing here is a placeholder that looks like a finish
 
 ## Nice to have later
 
+- [ ] **Font subsetting.** The three webfont subsets in use are ~198KB of the homepage's
+      483KB. Reducing them to the glyphs the site actually uses (roughly 40KB) requires
+      `fonttools` + `brotli` at build time — neither is installed, and adding them means a
+      new tooling dependency. Worth doing when a build step is acceptable.
 - [ ] A branded Open Graph card in the final typeface (the current one is composed from
       the portrait and uses DejaVu Serif, the closest serif available in the build
       environment, not Fraunces).
@@ -70,3 +74,18 @@ or needs confirmation — nothing here is a placeholder that looks like a finish
       is wanted, and update the privacy note.
 - [ ] A writing or notes section, if Anne wants to publish about front-end practice.
 - [ ] 1200×630 social cards per case study, rather than reusing the portrait card.
+
+## Accepted trade-offs (documented, not defects)
+
+- **Touch targets.** All controls meet WCAG 2.5.8 (24×24px) and the primary controls meet
+  the 44px touch guidance. Four secondary links that sit inside a line of text — the
+  Webloom link in the About timeline, the live URLs in the case-study metadata, and
+  "Back to all work" — are 30–36px tall. They are covered by the WCAG inline exception;
+  padding them to 44px would visibly loosen those metadata rows.
+- **Base colour** is `#171717`, one step darker than the original `#1C1C1C` at the client's
+  request. The footer/deepest surface is `#101010` and panels are `#1D1D1C`, so the
+  hierarchy inside the dark sections is unchanged.
+- **Header and footer markup is repeated in each HTML file.** The site has no build step by
+  design; a template step would be required to change that.
+- **Arrow glyphs** (→, ↗) come from the system fallback font because they fall outside the
+  webfont subsets' `unicode-range`.

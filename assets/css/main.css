@@ -63,6 +63,12 @@ video {
   max-width: 100%;
 }
 
+/* Media wrappers rely on object-fit, so the <picture> must fill the box rather
+   than letting the image overflow and be clipped by the wrapper. */
+picture {
+  height: 100%;
+}
+
 img {
   height: auto;
 }
@@ -96,6 +102,16 @@ dd {
   outline: var(--focus-ring);
   outline-offset: var(--focus-offset);
   border-radius: var(--radius-xs);
+}
+
+/* Filled controls: the brand ring disappears against the brand fill (1:1 on the
+   burnt-orange button, 1.39:1 on the olive chip). A light ring plus a dark halo
+   stays visible whatever is behind it — WCAG 1.4.11. */
+.btn--primary:focus-visible,
+.work-filter__btn[aria-pressed="true"]:focus-visible {
+  outline: 2px solid var(--text-light);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px rgba(23, 23, 23, 0.6);
 }
 
 ::selection {
@@ -268,7 +284,7 @@ dd {
   padding: 0.28rem 0.5rem;
   border: 1px solid var(--rule);
   border-radius: var(--radius-xs);
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   letter-spacing: 0.06em;
   line-height: 1.3;
   color: var(--muted);
@@ -287,12 +303,21 @@ a {
 }
 
 .link-underline {
+  display: inline-block;
+  padding-block: 0.35rem;
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.22em;
   text-decoration-color: var(--rule-strong);
   transition: text-decoration-color var(--duration) var(--ease),
     color var(--duration) var(--ease);
+}
+
+/* The hero's CV link is a primary action, so it gets a full-size target. */
+.hero__cv {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
 }
 
 .link-underline:hover {
@@ -305,6 +330,7 @@ a {
   align-items: center;
   justify-content: center;
   gap: 0.55rem;
+  min-height: 2.75rem;
   padding: 0.95rem 1.4rem;
   border: 1px solid transparent;
   border-radius: var(--radius-sm);
@@ -346,8 +372,10 @@ a {
 
 .link-arrow {
   display: inline-flex;
-  align-items: baseline;
+  align-items: center;
   gap: 0.5rem;
+  min-height: 2.75rem;
+  padding-block: 0.35rem;
   font-size: var(--step--1);
   font-weight: 500;
   letter-spacing: 0.12em;
@@ -418,6 +446,7 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
+  min-height: 2.75rem;
   color: var(--text-light);
 }
 
@@ -535,6 +564,7 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
+  min-height: 2.75rem;
   padding: 0.6rem 0;
   color: var(--text-light);
   font-size: var(--step--1);
@@ -619,7 +649,7 @@ a {
 
   .site-nav__link {
     position: relative;
-    padding: 0.35rem 0;
+    padding: 0.5rem 0;
     font-family: var(--font-sans);
     font-size: var(--step--1);
     font-weight: 500;
@@ -772,7 +802,7 @@ a {
   align-items: center;
   gap: 0.35rem 0.6rem;
   padding: 0.7rem 0.85rem;
-  background-color: rgba(22, 22, 21, 0.86);
+  background-color: rgba(17, 17, 17, 0.86);
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-sm);
   font-size: 0.72rem;
@@ -1311,7 +1341,8 @@ a {
 }
 
 .work-filter__btn {
-  padding: 0.5rem 0.95rem;
+  min-height: 2.75rem;
+  padding: 0.65rem 1rem;
   border: 1px solid var(--rule-on-dark-strong);
   border-radius: var(--radius-sm);
   font-size: var(--step--1);
@@ -1373,6 +1404,19 @@ a {
   background-color: var(--bg-dark);
   color: var(--text-light);
   overflow: hidden;
+}
+
+/* Below the desktop breakpoint the cover's caption can be taller than a 16:10
+   poster, so the box grows instead of clipping the text. */
+@media (max-width: 63.99rem) {
+  .work-card__media {
+    aspect-ratio: auto;
+  }
+
+  .cover {
+    aspect-ratio: auto;
+    min-height: 14rem;
+  }
 }
 
 .cover::before {
@@ -1784,6 +1828,8 @@ a {
 }
 
 .breadcrumb a {
+  display: inline-block;
+  padding-block: 0.9rem;
   color: var(--ink-on-dark-muted);
 }
 
@@ -2026,6 +2072,9 @@ a {
 }
 
 .contact-list__value a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
   transition: color var(--duration) var(--ease);
 }
 
@@ -2151,6 +2200,19 @@ a {
   overflow-wrap: anywhere;
 }
 
+/* Phones: full-size touch targets for footer links, without padding out the
+   desktop footer. */
+@media (max-width: 47.99rem) {
+  .footer-list {
+    gap: 0;
+  }
+
+  .footer-list a {
+    display: block;
+    padding-block: 0.8rem;
+  }
+}
+
 .footer-list a:hover {
   color: var(--burnt-orange);
 }
@@ -2205,7 +2267,7 @@ a {
   top: 0.5rem;
   z-index: var(--z-skip);
   transform: translateY(-160%);
-  padding: 0.7rem 1rem;
+  padding: 0.9rem 1rem;
   background-color: var(--bg-cream);
   color: var(--text-dark);
   font-size: var(--step--1);
