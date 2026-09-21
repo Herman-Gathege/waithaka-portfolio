@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AlphaOne — Multi-Tenant Rental Management SaaS | Anne Waithaka</title>
+    <meta
+      name="description"
+      content="Case study: AlphaOne, a multi-tenant rental management SaaS built with React, Vite, FastAPI, PostgreSQL and Docker — dashboards, JWT auth, RBAC and WhatsApp Cloud API."
+    />
+    <link rel="canonical" href="https://annewaithaka.com/case-studies/alphaone/" />
+    <meta name="theme-color" content="#1C1C1C" />
+    <meta name="author" content="Anne Nyambura Waithaka" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Anne Nyambura Waithaka" />
+    <meta
+      property="og:title"
+      content="AlphaOne — Multi-Tenant Rental Management SaaS | Case study"
+    />
+    <meta
+      property="og:description"
+      content="Responsive dashboards, JWT authentication, role-based access control, security hardening and WhatsApp Cloud API integration for a live rental management platform."
+    />
+    <meta property="og:url" content="https://annewaithaka.com/case-studies/alphaone/" />
+    <meta
+      property="og:image"
+      content="https://annewaithaka.com/images/optimized/alphaone-hero-1200.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="750" />
+    <meta
+      property="og:image:alt"
+      content="AlphaOne landing page and rental management dashboard overview."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="AlphaOne — Multi-Tenant Rental Management SaaS" />
+    <meta
+      name="twitter:description"
+      content="Responsive dashboards, JWT auth, RBAC and WhatsApp Cloud API integration for a live rental management platform."
+    />
+    <meta
+      name="twitter:image"
+      content="https://annewaithaka.com/images/optimized/alphaone-hero-1200.jpg"
+    />
+
+    <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../../assets/img/favicon-64.png" sizes="64x64" type="image/png" />
+    <link rel="apple-touch-icon" href="../../assets/img/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="../../assets/css/fonts.css" />
+    <link rel="stylesheet" href="../../assets/css/tokens.css" />
+    <link rel="stylesheet" href="../../assets/css/main.css" />
+
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <script defer src="../../assets/js/main.js"></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "AlphaOne — Multi-Tenant Rental Management SaaS",
+        "description": "Case study of AlphaOne, a live multi-tenant rental management SaaS platform built with React, Vite, FastAPI, PostgreSQL, Docker, Redis and the WhatsApp Cloud API.",
+        "url": "https://annewaithaka.com/case-studies/alphaone/",
+        "author": {
+          "@type": "Person",
+          "name": "Anne Nyambura Waithaka",
+          "jobTitle": "Front-End Engineer",
+          "url": "https://annewaithaka.com/"
+        },
+        "about": "Multi-tenant rental management SaaS",
+        "keywords": "React, Vite, FastAPI, PostgreSQL, Docker, Redis, WhatsApp Cloud API, JWT, role-based access control"
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header data-nav-open="false">
+      <div class="site-header__inner container">
+        <a class="wordmark" href="../../index.html">
+          <span class="wordmark__dot" aria-hidden="true"></span>
+          <span class="wordmark__name">Anne Waithaka</span>
+          <span class="wordmark__role">Front-End Engineer</span>
+        </a>
+
+        <nav class="site-nav" id="primary-nav" aria-label="Primary">
+          <ul class="site-nav__list">
+            <li class="site-nav__item">
+              <a class="site-nav__link" href="../../work.html" aria-current="page">Work</a>
+            </li>
+            <li class="site-nav__item">
+              <a class="site-nav__link" href="../../about.html">About</a>
+            </li>
+            <li class="site-nav__item">
+              <a class="site-nav__link" href="../../contact.html">Contact</a>
+            </li>
+          </ul>
+          <div class="site-nav__aside">
+            <a class="btn btn--primary" href="../../contact.html">Let’s talk</a>
+            <p class="site-nav__contact">
+              <a href="mailto:annewaithaka68@gmail.com">annewaithaka68@gmail.com</a>
+              <a href="tel:+254704072784">+254 704 072 784</a>
+            </p>
+          </div>
+        </nav>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+          aria-label="Open navigation menu"
+          data-nav-toggle
+        >
+          <span class="nav-toggle__icon" aria-hidden="true"><span></span><span></span></span>
+          <span class="nav-toggle__label nav-toggle__label--open">Menu</span>
+          <span class="nav-toggle__label nav-toggle__label--close">Close</span>
+        </button>
+      </div>
+    </header>
+
+    <main id="main">
+      <article>
+        <!-- Case hero -->
+        <section class="masthead theme-dark grain">
+          <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+              <ol>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../work.html">Work</a></li>
+                <li aria-current="page">AlphaOne</li>
+              </ol>
+            </nav>
+
+            <div class="masthead__grid mt-lg">
+              <p class="eyebrow">Case study 01 · Featured</p>
+              <h1 class="masthead__title">AlphaOne</h1>
+              <p class="masthead__lead">
+                A multi-tenant rental management SaaS platform for property managers, built
+                collaboratively across the stack: a React and Vite front end over a FastAPI and
+                PostgreSQL back end, containerised with Docker Compose and live at
+                alphaone.africa.
+              </p>
+            </div>
+
+            <dl class="case-meta">
+              <div class="fact">
+                <dt>Product</dt>
+                <dd>Multi-tenant rental management SaaS</dd>
+              </div>
+              <div class="fact">
+                <dt>Contribution</dt>
+                <dd>Front-end and full-stack development</dd>
+              </div>
+              <div class="fact">
+                <dt>Stack</dt>
+                <dd>React · Vite · FastAPI · PostgreSQL · Docker · Redis</dd>
+              </div>
+              <div class="fact">
+                <dt>Status</dt>
+                <dd>
+                  <a
+                    class="link-underline external"
+                    href="https://alphaone.africa/"
+                    rel="noopener"
+                    target="_blank"
+                    >Live at alphaone.africa</a
+                  >
+                </dd>
+              </div>
+            </dl>
+
+            <figure class="feature__media mt-lg">
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="
+                    ../../images/optimized/alphaone-hero-700.webp   700w,
+                    ../../images/optimized/alphaone-hero-1200.webp 1200w
+                  "
+                  sizes="(min-width: 78rem) 72rem, 100vw"
+                />
+                <img
+                  src="../../images/optimized/alphaone-hero-1200.jpg"
+                  width="1200"
+                  height="750"
+                  alt="AlphaOne landing page with the headline “The modern way to manage rental properties” beside a dashboard overview showing rent, occupancy, properties and tenants."
+                  loading="eager"
+                  decoding="async"
+                />
+              </picture>
+              <figcaption class="media-note">
+                AlphaOne’s public landing page and dashboard overview, as published at
+                alphaone.africa.
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <!-- Case body -->
+        <section class="section theme-cream">
+          <div class="container case-body">
+            <aside class="case-sidebar" data-reveal>
+              <div class="case-sidebar__group">
+                <p class="label">Role</p>
+                <p class="prose">Front-end and full-stack development, in a shared repository with peer reviews across the stack.</p>
+              </div>
+              <div class="case-sidebar__group">
+                <p class="label">Type</p>
+                <p class="prose">Multi-tenant SaaS · Property and rental management</p>
+              </div>
+              <div class="case-sidebar__group">
+                <p class="label">Core stack</p>
+                <div class="tag-list">
+                  <span class="tag">React</span>
+                  <span class="tag">Vite</span>
+                  <span class="tag">FastAPI</span>
+                  <span class="tag">PostgreSQL</span>
+                  <span class="tag">Docker</span>
+                  <span class="tag">Redis</span>
+                </div>
+              </div>
+              <div class="case-sidebar__group">
+                <p class="label">Links</p>
+                <p class="prose">
+                  <a
+                    class="link-underline external"
+                    href="https://alphaone.africa/"
+                    rel="noopener"
+                    target="_blank"
+                    >alphaone.africa</a
+                  ><br />
+                  <a class="link-underline" href="../../work.html">Back to all work</a>
+                </p>
+              </div>
+            </aside>
+
+            <div>
+              <section class="case-section" id="overview" data-reveal>
+                <div class="case-section__grid">
+                  <p class="case-section__num">01</p>
+                  <h2 class="case-section__title">Overview</h2>
+                  <div class="prose">
+                    <p>
+                      AlphaOne is a full-stack SaaS platform for property managers, built
+                      collaboratively through a shared Git repository with peer code reviews
+                      across the stack. The front end is React with Vite; the back end is
+                      FastAPI with PostgreSQL; the whole stack runs through Docker Compose, with
+                      Redis in the mix alongside it.
+                    </p>
+                    <p>
+                      The product covers the full letting cycle — organizations, properties,
+                      units, tenants, leases, billing, payments and finance analytics — and
+                      uses the WhatsApp Cloud API to handle tenant notifications, payment
+                      reconciliation and automated messaging workflows. It is live at
+                      <a href="https://alphaone.africa/" rel="noopener" target="_blank"
+                        >alphaone.africa</a
+                      >.
+                    </p>
+                  </div>
+                </div>
+              </section>
+
+              <section class="case-section" id="challenge" data-reveal>
+                <div class="case-section__grid">
+                  <p class="case-section__num">02</p>
+                  <h2 class="case-section__title">The challenge</h2>
+                  <div class="prose">
+                    <p>
+                      Rental management software has to hold several things true at once, and
+                      every one of them reaches the screen:
+                    </p>
+                    <ul class="case-list">
+                      <li>
+                        Many organizations on one platform, with records that must stay
+                        strictly separated.
+                      </li>
+                      <li>
+                        Different people needing different levels of access — what one role can
+                        see or change is not what another should.
+                      </li>
+                      <li>
+                        Money flows running through the product: billing, payments,
+                        reconciliation and finance reporting.
+                      </li>
+                      <li>
+                        Tenants who do not live in email — notifications and reminders have to
+                        arrive where they actually read them.
+                      </li>
+                      <li>
+                        Dashboards used on an office laptop and on a phone at a property, which
+                        makes responsive behaviour a functional requirement rather than a
+                        nicety.
+                      </li>
+                    </ul>
+                    <p>
+                      None of that is a purely visual problem: each screen depends on
+                      authorization, data integrity and third-party integrations behaving
+                      predictably.
+                    </p>
+                  </div>
+                </div>
+              </section>
+
+              <section class="case-section" id="contribution" data-reveal>
+                <div class="case-section__grid">
+                  <p class="case-section__num">03</p>
+                  <h2 class="case-section__title">My contribution</h2>
+                  <div>
+                    <ul class="case-list">
+                      <li>
+                        Designed responsive dashboards for organizations, properties, units,
+                        tenants, leases, billing, payments and finance analytics.
+                      </li>
+                      <li>
+                        Implemented JWT authentication, ProtectedRoute components and
+                        role-based access control.
+                      </li>
+                      <li>
+                        Worked on security hardening: rate limiting, PII encryption and
+                        HMAC-SHA256 blind indexes.
+                      </li>
+                      <li>
+                        Integrated the WhatsApp Cloud API for tenant notifications, payment
+                        reconciliation and automated messaging workflows.
+                      </li>
+                      <li>
+                        Developed collaboratively via a shared Git repository with peer code
+                        reviews across the stack.
+                      </li>
+                    </ul>
+                    <p class="media-note">
+                      AlphaOne is a team product. The contributions above are the ones
+                      documented in my CV; a fuller breakdown of who did what is available on
+                      request.
+                    </p>
+                  </div>
+                </div>
+              </section>
+
+              <section class="case-section" id="approach" data-reveal>
+                <div class="case-section__grid">
+                  <p class="case-section__num">04</p>
+                  <h2 class="case-section__title">Approach</h2>
+                  <div>
+                    <ul class="case-list">
+                      <li>
+                        <strong>Front end:</strong> a React and Vite application built from
+                        components that consume RESTful endpoints for lists, detail views,
+                        billing and finance analytics.
+                      </li>
+                      <li>
+                        <strong>Access control:</strong> JWT-based authentication with
+                        ProtectedRoute components, so unauthenticated users cannot reach
+                        application surfaces and role-based access control decides what each
+                        signed-in user can see and do.
+                      </li>
+                      <li>
+                        <strong>Multi-tenant structure:</strong> dashboards scoped to an
+                        organization, with properties, units, tenants and leases hanging off
+                        that structure consistently.
+                      </li>
+                      <li>
+                        <strong>Security in the model:</strong> rate limiting on the API, PII
+                        encrypted at rest, and HMAC-SHA256 blind indexes so records can be
+                        looked up without exposing raw values.
+                      </li>
+                      <li>
+                        <strong>Messaging and reconciliation:</strong> WhatsApp Cloud API
+                        workflows for tenant notifications and payment reconciliation, so
+                        reminders and confirmations reach people in the channel they use.
+                      </li>
+                      <li>
+                        <strong>Environments:</strong> Docker Compose runs the stack
+                        consistently for development and testing, with PostgreSQL storing data
+                        and Redis supporting the application alongside it.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+
+              <section class="case-section" id="technology" data-reveal>
+                <div class="case-section__grid">
+                  <p class="case-section__num">05</p>
+                  <h2 class="case-section__title">Technology</h2>
+                  <div class="tag-list">
+                    <span class="tag">React</span>
+                    <span class="tag">Vite</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">FastAPI</span>
+                    <span class="tag">PostgreSQL</span>
+                    <span class="tag">Docker Compose</span>
+                    <span class="tag">Redis</span>
+                    <span class="tag">WhatsApp Cloud API</span>
+                    <span class="tag">JWT</span>
+                    <span class="tag">Role-based access control</span>
+                    <span class="tag">Git</span>
+                  </div>
+                </div>
+              </section>
+
+              <section class="case-section" id="visuals" data-reveal>
+                <div class="case-section__grid">
+                  <p class="case-section__num">06</p>
+                  <h2 class="case-section__title">The product in view</h2>
+                  <figure class="case-figure">
+                    <div class="case-figure__media">
+                      <picture>
+                        <source
+                          type="image/webp"
+                          srcset="
+                            ../../images/optimized/alphaone-features-700.webp   700w,
+                            ../../images/optimized/alphaone-features-1200.webp 1200w
+                          "
+                          sizes="(min-width: 64rem) 44rem, 100vw"
+                        />
+                        <img
+                          src="../../images/optimized/alphaone-features-1200.jpg"
+                          width="1200"
+                          height="1008"
+                          alt="AlphaOne marketing page listing property, tenant, rent, lease, maintenance and reporting capabilities."
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </picture>
+                    </div>
+                    <figcaption class="media-note">
+                      The capability set as described on AlphaOne’s own site — property, tenant,
+                      rent and payments, leases, maintenance and reporting.
+                    </figcaption>
+                  </figure>
+                </div>
+              </section>
+
+              <section class="case-section" id="status" data-reveal>
+                <div class="case-section__grid">
+                  <p class="case-section__num">07</p>
+                  <h2 class="case-section__title">Where it stands</h2>
+                  <div class="prose">
+                    <p>
+                      AlphaOne is live and in use at
+                      <a href="https://alphaone.africa/" rel="noopener" target="_blank"
+                        >alphaone.africa</a
+                      >, covering the property, tenant, lease, billing and payments workflows
+                      described above, with WhatsApp messaging and finance analytics in place.
+                    </p>
+                    <p>
+                      I have deliberately not published usage, revenue or performance figures
+                      here — those belong to AlphaOne and its team, and I would rather leave
+                      them out than dress up a number I cannot stand behind.
+                    </p>
+                  </div>
+                </div>
+              </section>
+
+              <section class="case-section" id="takeaways" data-reveal>
+                <div class="case-section__grid">
+                  <p class="case-section__num">08</p>
+                  <h2 class="case-section__title">Key takeaways</h2>
+                  <div>
+                    <ul class="case-list">
+                      <li>
+                        In a multi-tenant product, authorization is a product decision, not a
+                        middleware checkbox — it shapes navigation, empty states and what a
+                        dashboard is even allowed to show.
+                      </li>
+                      <li>
+                        Third-party messaging integrations have their own delivery behaviour,
+                        and designing notifications means designing around that rather than
+                        assuming they arrive.
+                      </li>
+                      <li>
+                        Encryption and blind indexes have to be designed with the data model;
+                        retrofitting them later is far more expensive than deciding early.
+                      </li>
+                      <li>
+                        Peer reviews across the whole stack surfaced front-end assumptions
+                        early, while they were still cheap to change.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </section>
+      </article>
+
+      <!-- Previous / next -->
+      <section class="section theme-dark section--tight" aria-label="More case studies">
+        <div class="container">
+          <nav class="case-nav">
+            <a class="case-nav__link" href="../onq-global/">
+              <span class="case-nav__label">Previous case study</span>
+              <span class="case-nav__title">OnQ Global</span>
+            </a>
+            <a class="case-nav__link case-nav__link--next" href="../webloom-tech/">
+              <span class="case-nav__label">Next case study</span>
+              <span class="case-nav__title">Webloom Tech Kenya</span>
+            </a>
+          </nav>
+        </div>
+      </section>
+
+      <!-- Closing call to action -->
+      <section class="section theme-dark" id="contact">
+        <div class="container">
+          <div class="cta-band">
+            <div>
+              <h2 class="cta-band__title">
+                Building something that needs this kind of <em>care</em>?
+              </h2>
+            </div>
+            <div class="cta-band__aside">
+              <p class="lead">
+                I’m happy to talk through architecture, access control or the front-end
+                approach on a similar product.
+              </p>
+              <div class="contact-actions">
+                <a class="btn btn--primary" href="mailto:annewaithaka68@gmail.com"
+                  >annewaithaka68@gmail.com</a
+                >
+                <a class="btn btn--ghost" href="../../work.html">See more work</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="site-footer__top">
+          <p class="site-footer__name">Anne Nyambura Waithaka</p>
+          <p class="meta">Front-End Engineer · React · Vue · TypeScript · REST APIs</p>
+        </div>
+
+        <div class="site-footer__grid">
+          <div class="footer-block">
+            <h2 class="footer-block__title">Navigate</h2>
+            <ul class="footer-list">
+              <li><a href="../../index.html">Home</a></li>
+              <li><a href="../../work.html">Work</a></li>
+              <li><a href="../../about.html">About</a></li>
+              <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-block">
+            <h2 class="footer-block__title">Selected work</h2>
+            <ul class="footer-list">
+              <li><a href="../alphaone/">AlphaOne — rental management SaaS</a></li>
+              <li><a href="../webloom-tech/">Webloom Tech Kenya</a></li>
+              <li><a href="../onq-global/">OnQ Global</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-block">
+            <h2 class="footer-block__title">Get in touch</h2>
+            <ul class="footer-list">
+              <li><a href="mailto:annewaithaka68@gmail.com">annewaithaka68@gmail.com</a></li>
+              <li><a href="tel:+254704072784">+254 704 072 784</a></li>
+              <li>
+                <a href="https://www.linkedin.com/in/anne-waithaka" rel="noopener" target="_blank"
+                  >linkedin.com/in/anne-waithaka</a
+                >
+              </li>
+              <li>
+                <a href="https://github.com/annewaithaka" rel="noopener" target="_blank"
+                  >github.com/annewaithaka</a
+                >
+              </li>
+              <li><a href="../../docs/Anne-Waithaka-CV.pdf" download>Download CV (PDF)</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="site-footer__bottom">
+          <p>© <span data-year>2026</span> Anne Nyambura Waithaka</p>
+          <p>Designed and built with semantic HTML, modern CSS and a little JavaScript.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

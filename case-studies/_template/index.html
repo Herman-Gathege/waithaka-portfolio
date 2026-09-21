@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+  <!--
+    Case-study template.
+
+    Copy this folder to case-studies/<project-slug>/ and replace every [bracketed]
+    token. Keep only the sections you have facts for — delete the rest, including
+    their numbering, and renumber what remains. Never invent outcomes, metrics
+    or client names to fill a section: leave the section out and note the gap in
+    CONTENT-CHECKLIST.md instead.
+
+    Required: breadcrumb, hero, metadata, overview, contribution, technology,
+    previous/next, closing CTA.
+    Optional: challenge, approach, visuals, outcome, takeaways.
+
+    The template itself is excluded from search engines and from the sitemap.
+  -->
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>[Project name] — case study | Anne Waithaka</title>
+    <meta name="description" content="[One sentence: what the project is, who it is for, and what Anne did on it.]" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#1C1C1C" />
+
+    <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../../assets/img/favicon-64.png" sizes="64x64" type="image/png" />
+    <link rel="apple-touch-icon" href="../../assets/img/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="../../assets/css/fonts.css" />
+    <link rel="stylesheet" href="../../assets/css/tokens.css" />
+    <link rel="stylesheet" href="../../assets/css/main.css" />
+
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <script defer src="../../assets/js/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header data-nav-open="false">
+      <div class="site-header__inner container">
+        <a class="wordmark" href="../../index.html">
+          <span class="wordmark__dot" aria-hidden="true"></span>
+          <span class="wordmark__name">Anne Waithaka</span>
+          <span class="wordmark__role">Front-End Engineer</span>
+        </a>
+
+        <nav class="site-nav" id="primary-nav" aria-label="Primary">
+          <ul class="site-nav__list">
+            <li class="site-nav__item">
+              <a class="site-nav__link" href="../../work.html" aria-current="page">Work</a>
+            </li>
+            <li class="site-nav__item">
+              <a class="site-nav__link" href="../../about.html">About</a>
+            </li>
+            <li class="site-nav__item">
+              <a class="site-nav__link" href="../../contact.html">Contact</a>
+            </li>
+          </ul>
+          <div class="site-nav__aside">
+            <a class="btn btn--primary" href="../../contact.html">Let’s talk</a>
+            <p class="site-nav__contact">
+              <a href="mailto:annewaithaka68@gmail.com">annewaithaka68@gmail.com</a>
+              <a href="tel:+254704072784">+254 704 072 784</a>
+            </p>
+          </div>
+        </nav>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+          aria-label="Open navigation menu"
+          data-nav-toggle
+        >
+          <span class="nav-toggle__icon" aria-hidden="true"><span></span><span></span></span>
+          <span class="nav-toggle__label nav-toggle__label--open">Menu</span>
+          <span class="nav-toggle__label nav-toggle__label--close">Close</span>
+        </button>
+      </div>
+    </header>
+
+    <main id="main">
+      <article>
+        <section class="masthead theme-dark grain">
+          <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+              <ol>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../work.html">Work</a></li>
+                <li aria-current="page">[Project name]</li>
+              </ol>
+            </nav>
+
+            <div class="masthead__grid mt-lg">
+              <p class="eyebrow">Case study [0X] · [Featured / Engagement / Personal]</p>
+              <h1 class="masthead__title">[Project name]</h1>
+              <p class="masthead__lead">
+                [Two sentences: what the product is, who it serves, and the technology it is
+                built on.]
+              </p>
+            </div>
+
+            <dl class="case-meta">
+              <div class="fact">
+                <dt>Product</dt>
+                <dd>[Product category]</dd>
+              </div>
+              <div class="fact">
+                <dt>Contribution</dt>
+                <dd>[Anne’s role on this project]</dd>
+              </div>
+              <div class="fact">
+                <dt>Stack</dt>
+                <dd>[Technologies actually used]</dd>
+              </div>
+              <div class="fact">
+                <dt>Status</dt>
+                <dd>[Live at example.com / internal / archived]</dd>
+              </div>
+            </dl>
+
+            <!--
+              Replace with the project’s real visual — a screenshot of the live
+              product, or an art-directed cover when no screenshot exists. Keep the
+              alt text descriptive and the caption honest about what is shown.
+
+              <figure class="feature__media mt-lg">
+                <picture>
+                  <source type="image/webp" srcset="../../images/optimized/[asset]-700.webp 700w, ../../images/optimized/[asset]-1200.webp 1200w" sizes="(min-width: 78rem) 72rem, 100vw" />
+                  <img src="../../images/optimized/[asset]-1200.jpg" width="1200" height="683" alt="[What the image shows]" loading="eager" decoding="async" />
+                </picture>
+                <figcaption class="media-note">[Where the visual comes from.]</figcaption>
+              </figure>
+            -->
+          </div>
+        </section>
+
+        <section class="section theme-cream">
+          <div class="container case-body">
+            <aside class="case-sidebar" data-reveal>
+              <div class="case-sidebar__group">
+                <p class="label">Role</p>
+                <p class="prose">[One line on the role.]</p>
+              </div>
+              <div class="case-sidebar__group">
+                <p class="label">Type</p>
+                <p class="prose">[Project type]</p>
+              </div>
+              <div class="case-sidebar__group">
+                <p class="label">Core stack</p>
+                <div class="tag-list">
+                  <span class="tag">[Tool]</span>
+                  <span class="tag">[Tool]</span>
+                </div>
+              </div>
+              <div class="case-sidebar__group">
+                <p class="label">Links</p>
+                <p class="prose">
+                  <a class="link-underline external" href="https://example.com/" rel="noopener" target="_blank">[example.com]</a><br />
+                  <a class="link-underline" href="../../work.html">Back to all work</a>
+                </p>
+              </div>
+            </aside>
+
+            <div>
+              <section class="case-section" id="overview" data-reveal>
+                <div class="case-section__grid">
+                  <p class="case-section__num">01</p>
+                  <h2 class="case-section__title">Overview</h2>
+                  <div class="prose">
+                    <p>[What the product is, and the context it exists in.]</p>
+                  </div>
+                </div>
+              </section>
+
+              <section class="case-section" id="challenge" data-reveal>
+                <div class="case-section__grid">
+                  <p class="case-section__num">02</p>
+                  <h2 class="case-section__title">The challenge</h2>
+                  <div>
+                    <ul class="case-list">
+                      <li>[Constraint or problem the work had to solve.]</li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+
+              <section class="case-section" id="contribution" data-reveal>
+                <div class="case-section__grid">
+                  <p class="case-section__num">03</p>
+                  <h2 class="case-section__title">My contribution</h2>
+                  <div>
+                    <ul class="case-list">
+                      <li>[What Anne personally did — keep it defensible.]</li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+
+              <section class="case-section" id="approach" data-reveal>
+                <div class="case-section__grid">
+                  <p class="case-section__num">04</p>
+                  <h2 class="case-section__title">Approach</h2>
+                  <div>
+                    <ul class="case-list">
+                      <li><strong>[Decision]:</strong> [why it was taken and what it bought.]</li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+
+              <section class="case-section" id="technology" data-reveal>
+                <div class="case-section__grid">
+                  <p class="case-section__num">05</p>
+                  <h2 class="case-section__title">Technology</h2>
+                  <div class="tag-list">
+                    <span class="tag">[Tool]</span>
+                    <span class="tag">[Tool]</span>
+                  </div>
+                </div>
+              </section>
+
+              <section class="case-section" id="outcome" data-reveal>
+                <div class="case-section__grid">
+                  <p class="case-section__num">06</p>
+                  <h2 class="case-section__title">Outcome</h2>
+                  <div class="prose">
+                    <p>
+                      [Only verifiable results. If there are none to publish, say so plainly —
+                      for example: “No usage or revenue figures are published for this project.”]
+                    </p>
+                  </div>
+                </div>
+              </section>
+
+              <section class="case-section" id="takeaways" data-reveal>
+                <div class="case-section__grid">
+                  <p class="case-section__num">07</p>
+                  <h2 class="case-section__title">Key takeaways</h2>
+                  <div>
+                    <ul class="case-list">
+                      <li>[What this project taught, in Anne’s own voice.]</li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </section>
+      </article>
+
+      <section class="section theme-dark section--tight" aria-label="More case studies">
+        <div class="container">
+          <nav class="case-nav">
+            <a class="case-nav__link" href="../alphaone/">
+              <span class="case-nav__label">Previous case study</span>
+              <span class="case-nav__title">[Previous]</span>
+            </a>
+            <a class="case-nav__link case-nav__link--next" href="../webloom-tech/">
+              <span class="case-nav__label">Next case study</span>
+              <span class="case-nav__title">[Next]</span>
+            </a>
+          </nav>
+        </div>
+      </section>
+
+      <section class="section theme-dark" id="contact">
+        <div class="container">
+          <div class="cta-band">
+            <div>
+              <h2 class="cta-band__title">[Closing question that fits the project.]</h2>
+            </div>
+            <div class="cta-band__aside">
+              <p class="lead">[One line inviting the relevant conversation.]</p>
+              <div class="contact-actions">
+                <a class="btn btn--primary" href="mailto:annewaithaka68@gmail.com"
+                  >annewaithaka68@gmail.com</a
+                >
+                <a class="btn btn--ghost" href="../../work.html">See more work</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="site-footer__top">
+          <p class="site-footer__name">Anne Nyambura Waithaka</p>
+          <p class="meta">Front-End Engineer · React · Vue · TypeScript · REST APIs</p>
+        </div>
+
+        <div class="site-footer__grid">
+          <div class="footer-block">
+            <h2 class="footer-block__title">Navigate</h2>
+            <ul class="footer-list">
+              <li><a href="../../index.html">Home</a></li>
+              <li><a href="../../work.html">Work</a></li>
+              <li><a href="../../about.html">About</a></li>
+              <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-block">
+            <h2 class="footer-block__title">Selected work</h2>
+            <ul class="footer-list">
+              <li><a href="../alphaone/">AlphaOne — rental management SaaS</a></li>
+              <li><a href="../webloom-tech/">Webloom Tech Kenya</a></li>
+              <li><a href="../onq-global/">OnQ Global</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-block">
+            <h2 class="footer-block__title">Get in touch</h2>
+            <ul class="footer-list">
+              <li><a href="mailto:annewaithaka68@gmail.com">annewaithaka68@gmail.com</a></li>
+              <li><a href="tel:+254704072784">+254 704 072 784</a></li>
+              <li>
+                <a href="https://www.linkedin.com/in/anne-waithaka" rel="noopener" target="_blank"
+                  >linkedin.com/in/anne-waithaka</a
+                >
+              </li>
+              <li>
+                <a href="https://github.com/annewaithaka" rel="noopener" target="_blank"
+                  >github.com/annewaithaka</a
+                >
+              </li>
+              <li><a href="../../docs/Anne-Waithaka-CV.pdf" download>Download CV (PDF)</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="site-footer__bottom">
+          <p>© <span data-year>2026</span> Anne Nyambura Waithaka</p>
+          <p>Designed and built with semantic HTML, modern CSS and a little JavaScript.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

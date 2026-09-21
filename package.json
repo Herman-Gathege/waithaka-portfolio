@@ -1,0 +1,15 @@
+{
+  "name": "anne-waithaka-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfolio site for Anne Nyambura Waithaka, front-end engineer. Static HTML, CSS and a little JavaScript — no build step, no dependencies.",
+  "type": "module",
+  "scripts": {
+    "check": "node tools/check-site.mjs",
+    "qa": "node tools/qa-visual.mjs",
+    "serve": "python3 -m http.server 4321"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

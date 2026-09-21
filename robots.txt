@@ -1,0 +1,9 @@
+# Anne Nyambura Waithaka — portfolio
+# Replace the Sitemap host if the site moves to a different domain.
+
+User-agent: *
+Allow: /
+
+Disallow: /case-studies/_template/
+
+Sitemap: https://annewaithaka.com/sitemap.xml

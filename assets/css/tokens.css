@@ -1,0 +1,140 @@
+/* ==========================================================================
+   Anne Nyambura Waithaka — design tokens
+   Single source of truth for colour, type, space, motion and surface values.
+   ========================================================================== */
+
+:root {
+  /* --- Core palette (fixed brand values) --- */
+  --bg-dark: #1c1c1c;
+  --bg-cream: #f5f1e8;
+  --olive: #6b705c;
+  --burnt-orange: #c96c3a;
+  --text-light: #f8f6f2;
+  --text-dark: #2e2e2e;
+  --gold: #b08d57;
+
+  /* --- Derived surfaces --- */
+  --bg-dark-deep: #161616;
+  --bg-dark-soft: #242422;
+  --bg-cream-deep: #ebe6da;
+  --bg-cream-raised: #fbf9f4;
+  --olive-tint: rgba(107, 112, 92, 0.12);
+  --gold-tint: rgba(176, 141, 87, 0.16);
+
+  /* --- Text-safe accent variants (AA on cream) --- */
+  --olive-deep: #545847;
+  --orange-deep: #a9542a;
+
+  /* --- Ink --- */
+  --ink-on-dark: var(--text-light);
+  --ink-on-dark-muted: rgba(248, 246, 242, 0.72);
+  --ink-on-dark-faint: rgba(248, 246, 242, 0.5);
+  --ink-on-light: var(--text-dark);
+  --ink-on-light-muted: rgba(46, 46, 46, 0.74);
+  --ink-on-light-faint: rgba(46, 46, 46, 0.68);
+
+  /* --- Rules and borders --- */
+  --rule-on-dark: rgba(248, 246, 242, 0.16);
+  --rule-on-dark-strong: rgba(248, 246, 242, 0.32);
+  --rule-on-light: rgba(46, 46, 46, 0.14);
+  --rule-on-light-strong: rgba(46, 46, 46, 0.28);
+
+  /* --- Restrained glass --- */
+  --glass-bg: rgba(22, 22, 21, 0.82);
+  --glass-bg-soft: rgba(22, 22, 21, 0.55);
+  --glass-border: rgba(248, 246, 242, 0.14);
+  --glass-blur: 14px;
+
+  /* --- Typography --- */
+  --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", Palatino,
+    Georgia, "Times New Roman", serif;
+  --font-sans: "Work Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+
+  --step--1: clamp(0.76rem, 0.74rem + 0.1vw, 0.82rem);
+  --step-0: clamp(0.95rem, 0.93rem + 0.18vw, 1.03rem);
+  --step-1: clamp(1.05rem, 1rem + 0.4vw, 1.25rem);
+  --step-2: clamp(1.3rem, 1.16rem + 0.9vw, 1.72rem);
+  --step-3: clamp(1.6rem, 1.34rem + 1.5vw, 2.35rem);
+  --step-4: clamp(2rem, 1.54rem + 2.6vw, 3.3rem);
+  --step-5: clamp(2.35rem, 1.6rem + 4.4vw, 4.6rem);
+  --step-6: clamp(2.6rem, 1.4rem + 6.6vw, 6.4rem);
+
+  --leading-tight: 1.06;
+  --leading-snug: 1.24;
+  --leading-body: 1.62;
+  --tracking-display: -0.022em;
+  --tracking-wide: 0.14em;
+  --tracking-wider: 0.24em;
+
+  /* --- Space --- */
+  --space-3xs: 0.375rem;
+  --space-2xs: 0.625rem;
+  --space-xs: 0.875rem;
+  --space-sm: 1.25rem;
+  --space-md: 1.75rem;
+  --space-lg: 2.5rem;
+  --space-xl: 3.5rem;
+  --space-2xl: 5rem;
+  --space-3xl: 7rem;
+  --space-4xl: 9rem;
+
+  --gutter: clamp(1.125rem, 4.5vw, 3rem);
+  --container: 78rem;
+  --container-narrow: 60rem;
+  --measure: 68ch;
+  --section-y: clamp(3.5rem, 8vw, 7.5rem);
+  --header-h: 4.25rem;
+  --nav-panel-h: 4.75rem;
+
+  /* --- Shape --- */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-pill: 999px;
+  --border-hairline: 1px solid var(--rule-on-light);
+
+  /* --- Elevation (used sparingly) --- */
+  --shadow-sm: 0 1px 2px rgba(20, 18, 16, 0.06);
+  --shadow-md: 0 18px 40px -28px rgba(20, 18, 16, 0.45);
+
+  /* --- Motion --- */
+  --ease: cubic-bezier(0.2, 0.6, 0.3, 1);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 180ms;
+  --duration: 280ms;
+  --duration-slow: 400ms;
+
+  /* --- Layers --- */
+  --z-header: 100;
+  --z-nav: 200;
+  --z-skip: 300;
+
+  --focus-ring: 2px solid var(--burnt-orange);
+  --focus-offset: 3px;
+}
+
+/* Theme containers: components read --rule, --muted, --panel and --accent-ink
+   so the same markup works on charcoal and on cream. */
+.theme-dark {
+  background-color: var(--bg-dark);
+  color: var(--ink-on-dark);
+  --rule: var(--rule-on-dark);
+  --rule-strong: var(--rule-on-dark-strong);
+  --muted: var(--ink-on-dark-muted);
+  --faint: var(--ink-on-dark-faint);
+  --panel: #212120;
+  --panel-hover: #272725;
+  --accent-ink: var(--burnt-orange);
+}
+
+.theme-cream {
+  background-color: var(--bg-cream);
+  color: var(--ink-on-light);
+  --rule: var(--rule-on-light);
+  --rule-strong: var(--rule-on-light-strong);
+  --muted: var(--ink-on-light-muted);
+  --faint: var(--ink-on-light-faint);
+  --panel: var(--bg-cream-raised);
+  --panel-hover: #f2eee2;
+  --accent-ink: var(--orange-deep);
+}
