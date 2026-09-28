@@ -434,6 +434,17 @@ a {
   }
 }
 
+/* A backdrop-filter turns the header into the containing block for its
+   position: fixed children, which clips the mobile menu to the header's
+   height once the page is scrolled. Drop the blur while the menu is open so
+   the menu is sized to the viewport again. */
+.site-header[data-nav-open="true"],
+.site-header.is-scrolled[data-nav-open="true"] {
+  background-color: var(--bg-dark);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
 .site-header__inner {
   display: flex;
   align-items: center;
