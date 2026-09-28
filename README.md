@@ -1,6 +1,6 @@
 # Anne Nyambura Waithaka — portfolio
 
-A static portfolio for a front-end engineer: warm editorial minimalism, bento layouts and
+A static portfolio for a full-stack developer: warm editorial minimalism, bento layouts and
 restrained glassmorphism. No framework, no build step, no runtime dependencies — nine HTML
 pages, three stylesheets, one small JavaScript file and a set of optimised images.
 
@@ -43,7 +43,7 @@ The audit reports from the last full pass are in `PORTFOLIO-QA-BASELINE.md` and
 
 ```
 assets/css/tokens.css   Design tokens: palette, type scale, space, motion, glass, layers
-assets/css/fonts.css    Self-hosted variable fonts (Fraunces, Work Sans)
+assets/css/fonts.css    Self-hosted variable font (IBM Plex Sans)
 assets/css/main.css     All components, mobile-first
 assets/js/main.js       Header state, mobile nav, reveal, work filter, copy-to-clipboard
 assets/img/             Favicon and touch icons

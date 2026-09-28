@@ -2344,3 +2344,97 @@ a {
     color: #000;
   }
 }
+
+/* 99. Typography — IBM Plex Sans
+   One professional sans family carries every role. Headings rely on weight
+   and tight tracking for hierarchy; accent words keep a true italic in a
+   regular weight so they read as emphasis rather than decoration.
+   ========================================================================== */
+
+body {
+  font-feature-settings: "kern" 1, "liga" 1;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+.display-3,
+.display-4,
+.hero__name,
+.masthead__title,
+.feature__title,
+.cta-band__title,
+.case-section__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+.hero__name {
+  font-weight: 600;
+  letter-spacing: -0.032em;
+  line-height: 0.98;
+}
+
+.masthead__title,
+.feature__title,
+.cta-band__title {
+  letter-spacing: -0.028em;
+}
+
+.bento__title,
+.work-card__title,
+.timeline__title,
+.credential__school,
+.note-panel__title,
+.case-nav__title {
+  font-weight: 600;
+  letter-spacing: -0.012em;
+}
+
+.hero__name .hero__name-accent,
+.display-3 em,
+.display-4 em,
+.masthead__title em,
+.cta-band__title em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.intro__statement {
+  font-weight: 400;
+  letter-spacing: -0.014em;
+  line-height: 1.36;
+}
+
+.intro__statement strong {
+  font-weight: 600;
+  font-style: normal;
+}
+
+.site-footer__name,
+.wordmark__name {
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+
+.hero__fact dd,
+.timeline__period,
+.contact-list__value,
+.cover__word {
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.eyebrow__num,
+.bento__num,
+.case-section__num {
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.lead,
+.prose {
+  font-weight: 400;
+}

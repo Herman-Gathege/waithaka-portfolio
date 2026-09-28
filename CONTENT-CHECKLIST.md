@@ -63,16 +63,14 @@ or needs confirmation — nothing here is a placeholder that looks like a finish
 
 ## Nice to have later
 
-- [ ] **Font subsetting.** The three webfont subsets in use are ~198KB of the homepage's
+- [ ] **Font subsetting.** The webfont subsets in use are ~198KB of the homepage's
       483KB. Reducing them to the glyphs the site actually uses (roughly 40KB) requires
       `fonttools` + `brotli` at build time — neither is installed, and adding them means a
       new tooling dependency. Worth doing when a build step is acceptable.
-- [ ] A branded Open Graph card in the final typeface (the current one is composed from
-      the portrait and uses DejaVu Serif, the closest serif available in the build
-      environment, not Fraunces).
+- [x] Open Graph card rebuilt in IBM Plex Sans with the Full-Stack Developer title.
 - [ ] Analytics: no tracking script is installed. Add GA4 with a measurement ID if that
       is wanted, and update the privacy note.
-- [ ] A writing or notes section, if Anne wants to publish about front-end practice.
+- [ ] A writing or notes section, if Anne wants to publish about full-stack practice.
 - [ ] 1200×630 social cards per case study, rather than reusing the portrait card.
 
 ## Accepted trade-offs (documented, not defects)

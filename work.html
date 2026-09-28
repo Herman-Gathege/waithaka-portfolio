@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Work — Anne Waithaka, Front-End Engineer</title>
+    <title>Work — Anne Waithaka, Full-Stack Developer</title>
     <meta
       name="description"
-      content="Selected work by front-end engineer Anne Waithaka: the live AlphaOne rental management SaaS, Webloom Tech Kenya client front-ends, OnQ Global work and independent builds."
+      content="Selected work by full-stack developer Anne Waithaka: the live AlphaOne rental SaaS, Webloom Tech Kenya full-stack client builds, OnQ Global work and independent builds."
     />
     <link rel="canonical" href="https://annewaithaka.com/work.html" />
     <meta name="theme-color" content="#171717" />
@@ -14,10 +14,10 @@
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Anne Nyambura Waithaka" />
-    <meta property="og:title" content="Work — Anne Waithaka, Front-End Engineer" />
+    <meta property="og:title" content="Work — Anne Waithaka, Full-Stack Developer" />
     <meta
       property="og:description"
-      content="A live multi-tenant SaaS platform, agency client front-ends and independent builds — with case studies for each."
+      content="A live multi-tenant SaaS platform, agency client builds and independent projects — with case studies for each."
     />
     <meta property="og:url" content="https://annewaithaka.com/work.html" />
     <meta property="og:image" content="https://annewaithaka.com/images/og-card.jpg" />
@@ -25,19 +25,21 @@
     <meta property="og:image:height" content="630" />
     <meta
       property="og:image:alt"
-      content="Portrait of Anne Nyambura Waithaka, front-end engineer."
+      content="Portrait of Anne Nyambura Waithaka, full-stack developer."
     />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Work — Anne Waithaka, Front-End Engineer" />
+    <meta name="twitter:title" content="Work — Anne Waithaka, Full-Stack Developer" />
     <meta
       name="twitter:description"
-      content="A live multi-tenant SaaS platform, agency client front-ends and independent builds — with case studies for each."
+      content="A live multi-tenant SaaS platform, agency client builds and independent projects — with case studies for each."
     />
     <meta name="twitter:image" content="https://annewaithaka.com/images/og-card.jpg" />
 
     <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="assets/img/favicon-64.png" sizes="64x64" type="image/png" />
     <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+
+    <link rel="preload" href="assets/fonts/ibm-plex-sans-normal-100-700-latin.woff2" as="font" type="font/woff2" crossorigin />
 
     <link rel="stylesheet" href="assets/css/fonts.css" />
     <link rel="stylesheet" href="assets/css/tokens.css" />
@@ -54,7 +56,7 @@
         "@type": "CollectionPage",
         "name": "Work — Anne Nyambura Waithaka",
         "url": "https://annewaithaka.com/work.html",
-        "about": "Front-end and full-stack projects by Anne Nyambura Waithaka",
+        "about": "Full-stack and front-end projects by Anne Nyambura Waithaka",
         "hasPart": [
           {
             "@type": "CreativeWork",
@@ -64,12 +66,12 @@
           },
           {
             "@type": "CreativeWork",
-            "name": "Webloom Tech Kenya — client front-ends",
+            "name": "Webloom Tech Kenya — full-stack client builds",
             "url": "https://annewaithaka.com/case-studies/webloom-tech/"
           },
           {
             "@type": "CreativeWork",
-            "name": "OnQ Global — corporate digital experience",
+            "name": "OnQ Global — website, SEO and analytics",
             "url": "https://annewaithaka.com/case-studies/onq-global/"
           }
         ]
@@ -84,7 +86,7 @@
         <a class="wordmark" href="index.html">
           <span class="wordmark__dot" aria-hidden="true"></span>
           <span class="wordmark__name">Anne Waithaka</span>
-          <span class="wordmark__role">Front-End Engineer</span>
+          <span class="wordmark__role">Full-Stack Developer</span>
         </a>
 
         <nav class="site-nav" id="primary-nav" aria-label="Primary">
@@ -134,7 +136,7 @@
             </h1>
             <p class="masthead__lead">
               Everything below is work I have shipped: a live multi-tenant SaaS platform,
-              agency front-ends for paying clients, in-house digital experience work and
+              agency builds for paying clients, in-house digital experience work and
               independent builds. No concept mock-ups, no invented metrics.
             </p>
           </div>
@@ -267,12 +269,12 @@
               <div class="work-card__body">
                 <div class="work-card__head">
                   <h3 class="work-card__title">Webloom Tech Kenya</h3>
-                  <p class="work-card__kind">Web · Front-end</p>
+                  <p class="work-card__kind">Web · Full-stack</p>
                 </div>
                 <p class="work-card__text">
-                  SEO-optimized front-end applications for e-commerce, creative services and
-                  personal branding clients — architected mobile-first in React, Vue and Nuxt,
-                  consuming RESTful APIs to display data, validate input and post updates.
+                  Full-stack client builds for e-commerce, creative services and personal
+                  branding — mobile-first React, Vue and Nuxt front ends on Node.js, FastAPI
+                  and Django APIs, containerised with Docker and shipped through CI/CD.
                 </p>
                 <div class="tag-list">
                   <span class="tag">React.js</span>
@@ -299,31 +301,38 @@
 
             <article class="work-card" data-types="web" data-reveal>
               <div class="work-card__media">
-                <div class="cover cover--cream">
-                  <p class="cover__top">
-                    <span>Case study 03</span>
-                    <span class="cover__mark" aria-hidden="true"></span>
-                  </p>
-                  <p class="cover__word"><span>OnQ</span><span>Global</span></p>
-                  <p class="cover__foot">
-                    <span>Corporate digital experience</span>
-                    <span>React · GA4 · SEO</span>
-                  </p>
-                </div>
+                <picture>
+                  <source
+                    type="image/webp"
+                    srcset="
+                      images/optimized/onq-hero-700.webp    700w,
+                      images/optimized/onq-hero-1048.webp 1048w
+                    "
+                    sizes="(min-width: 64rem) 30rem, (min-width: 48rem) 45vw, 100vw"
+                  />
+                  <img
+                    src="images/optimized/onq-hero-1048.jpg"
+                    width="1048"
+                    height="655"
+                    alt="OnQ Global homepage hero with the headline “The Global Operations Partner Built to Scale Your Business.”"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
               </div>
               <div class="work-card__body">
                 <div class="work-card__head">
                   <h3 class="work-card__title">OnQ Global</h3>
-                  <p class="work-card__kind">Web · Digital experience</p>
+                  <p class="work-card__kind">Web · WordPress &amp; SEO</p>
                 </div>
                 <p class="work-card__text">
-                  User-facing features across corporate websites with HTML, CSS, JavaScript
-                  and React, alongside on-page SEO — metadata, internal linking and schema
-                  markup — and search analytics that inform what to improve next.
+                  Owning onq.global, the website of a global outsourcing and AI-automation
+                  company with hubs in Panama, Kenya and India — service and product pages in
+                  WordPress (Avada), technical SEO, schema markup and analytics.
                 </p>
                 <div class="tag-list">
-                  <span class="tag">React</span>
-                  <span class="tag">JavaScript</span>
+                  <span class="tag">WordPress</span>
+                  <span class="tag">Avada</span>
                   <span class="tag">GA4</span>
                   <span class="tag">Google Tag Manager</span>
                   <span class="tag">Search Console</span>
@@ -431,7 +440,7 @@
       <div class="container">
         <div class="site-footer__top">
           <p class="site-footer__name">Anne Nyambura Waithaka</p>
-          <p class="meta">Front-End Engineer · React · Vue · TypeScript · REST APIs</p>
+          <p class="meta">Full-Stack Developer · React · Vue · TypeScript · FastAPI · Node.js</p>
         </div>
 
         <div class="site-footer__grid">
