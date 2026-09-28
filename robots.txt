@@ -1,9 +1,9 @@
 # Anne Nyambura Waithaka — portfolio
-# Replace the Sitemap host if the site moves to a different domain.
+# Replace the Sitemap host when the custom domain (annewaithaka.com) goes live.
 
 User-agent: *
 Allow: /
 
 Disallow: /case-studies/_template/
 
-Sitemap: https://annewaithaka.com/sitemap.xml
+Sitemap: https://anne-waithaka-portfolio.onrender.com/sitemap.xml

@@ -20,7 +20,7 @@ const ROOT = resolve(fileURLToPath(new URL("..", import.meta.url)));
 const SKIP_DIRS = new Set(["node_modules", ".git", ".agents", ".codex"]);
 const NOINDEX_PAGES = new Set(["404.html"]);
 const TEMPLATE_PREFIX = "case-studies/_template/";
-const SITE_ORIGIN = "https://annewaithaka.com";
+const SITE_ORIGIN = "https://anne-waithaka-portfolio.onrender.com";
 const EXTERNAL_MARKER = /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i;
 
 const errors = [];
