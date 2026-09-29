@@ -933,6 +933,31 @@ a {
   font-style: italic;
 }
 
+.intro__figure {
+  display: grid;
+  gap: var(--space-2xs);
+  margin: 0;
+}
+
+.intro__figure-media {
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  border: 1px solid var(--rule);
+  background-color: var(--bg-dark-soft);
+}
+
+.intro__figure-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 20%;
+}
+
+.intro__figure figcaption {
+  font-size: var(--step--1);
+  color: var(--faint);
+}
+
 .intro__aside {
   display: grid;
   gap: var(--space-sm);
@@ -970,13 +995,16 @@ a {
   }
 
   .intro__head,
-  .intro__lead,
-  .intro__aside {
+  .intro__lead {
     grid-column: 1 / -1;
   }
 
   .intro__aside {
-    max-width: 62ch;
+    grid-column: 1;
+  }
+
+  .intro__figure {
+    grid-column: 2;
   }
 
   .intro__statement {
@@ -986,7 +1014,7 @@ a {
 
 @media (min-width: 64rem) {
   .intro__grid {
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.95fr) minmax(0, 0.7fr);
     column-gap: clamp(1.75rem, 3.5vw, 3rem);
     row-gap: var(--space-md);
     align-items: start;
@@ -1006,7 +1034,10 @@ a {
 
   .intro__aside {
     grid-column: 2;
-    max-width: none;
+  }
+
+  .intro__figure {
+    grid-column: 3;
   }
 }
 
@@ -1471,6 +1502,15 @@ a {
 }
 
 @media (min-width: 64rem) {
+  /* Three tiles per row on desktop; feature tiles take two, full tiles a row. */
+  .work-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .work-card--full {
+    grid-column: 1 / -1;
+  }
+
   .work-card--feature {
     display: grid;
     grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
