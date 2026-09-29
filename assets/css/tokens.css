@@ -79,9 +79,11 @@
   --space-3xl: 7rem;
   --space-4xl: 9rem;
 
-  --gutter: clamp(1.125rem, 4.5vw, 3rem);
-  --container: 78rem;
-  --container-narrow: 60rem;
+  --gutter: clamp(1.125rem, 4.5vw, 5rem);
+  /* Wide enough to fill laptop and desktop screens; text blocks keep their
+     own readable measure (in ch) so long lines never form. */
+  --container: 100rem;
+  --container-narrow: 66rem;
   --measure: 68ch;
   --section-y: clamp(3.5rem, 8vw, 7.5rem);
   --header-h: 4.25rem;
