@@ -7,7 +7,9 @@
   /* --- Core palette (fixed brand values) --- */
   --bg-dark: #171717;
   --bg-cream: #f5f1e8;
-  --olive: #6b705c;
+  /* Olive is retired from the palette: the names stay so existing rules keep
+     working, but they now resolve to charcoal and the orange text accent. */
+  --olive: #2e2e2e;
   --burnt-orange: #c96c3a;
   --text-light: #f8f6f2;
   --text-dark: #2e2e2e;
@@ -18,20 +20,20 @@
   --bg-dark-soft: #1f1f1e;
   --bg-cream-deep: #ebe6da;
   --bg-cream-raised: #fbf9f4;
-  --olive-tint: rgba(107, 112, 92, 0.12);
+  --olive-tint: rgba(201, 108, 58, 0.1);
   --gold-tint: rgba(176, 141, 87, 0.16);
 
   /* --- Text-safe accent variants (AA on cream) --- */
-  --olive-deep: #545847;
+  --olive-deep: #a9542a;
   --orange-deep: #a9542a;
 
   /* --- Ink --- */
   --ink-on-dark: var(--text-light);
-  --ink-on-dark-muted: rgba(248, 246, 242, 0.72);
-  --ink-on-dark-faint: rgba(248, 246, 242, 0.5);
+  --ink-on-dark-muted: rgba(248, 246, 242, 0.8);
+  --ink-on-dark-faint: rgba(248, 246, 242, 0.66);
   --ink-on-light: var(--text-dark);
-  --ink-on-light-muted: rgba(46, 46, 46, 0.74);
-  --ink-on-light-faint: rgba(46, 46, 46, 0.68);
+  --ink-on-light-muted: rgba(46, 46, 46, 0.82);
+  --ink-on-light-faint: rgba(46, 46, 46, 0.74);
 
   /* --- Rules and borders --- */
   --rule-on-dark: rgba(248, 246, 242, 0.16);
@@ -51,8 +53,8 @@
   --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, sans-serif;
 
-  --step--1: clamp(0.76rem, 0.74rem + 0.1vw, 0.82rem);
-  --step-0: clamp(0.95rem, 0.93rem + 0.18vw, 1.03rem);
+  --step--1: clamp(0.86rem, 0.84rem + 0.1vw, 0.92rem);
+  --step-0: clamp(1rem, 0.97rem + 0.18vw, 1.08rem);
   --step-1: clamp(1.05rem, 1rem + 0.4vw, 1.25rem);
   --step-2: clamp(1.3rem, 1.16rem + 0.9vw, 1.72rem);
   --step-3: clamp(1.6rem, 1.34rem + 1.5vw, 2.35rem);

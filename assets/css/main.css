@@ -442,7 +442,9 @@ a {
 
 @supports (backdrop-filter: blur(6px)) {
   .site-header.is-scrolled {
-    background-color: var(--glass-bg-soft);
+    /* Near-solid, so the bar stays crisp over the cream sections instead of
+       turning a muddy grey. */
+    background-color: rgba(23, 23, 23, 0.92);
     backdrop-filter: blur(var(--glass-blur)) saturate(140%);
     -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(140%);
   }
@@ -985,7 +987,13 @@ a {
   top: 0.62em;
   width: 6px;
   height: 6px;
-  background-color: var(--olive);
+  background-color: var(--burnt-orange);
+}
+
+.intro__focus {
+  display: grid;
+  gap: var(--space-xs);
+  align-content: start;
 }
 
 @media (min-width: 48rem) {
@@ -999,45 +1007,116 @@ a {
     grid-column: 1 / -1;
   }
 
+  .intro__statement {
+    max-width: 44ch;
+  }
+
   .intro__aside {
+    grid-column: 1;
+  }
+
+  .intro__focus {
     grid-column: 1;
   }
 
   .intro__figure {
     grid-column: 2;
-  }
-
-  .intro__statement {
-    max-width: 32ch;
+    grid-row: span 2;
   }
 }
 
+/* Desktop: the statement runs across the top; paragraphs, focus areas and the
+   photo sit in a row underneath it. */
 @media (min-width: 64rem) {
   .intro__grid {
-    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.95fr) minmax(0, 0.7fr);
-    column-gap: clamp(1.75rem, 3.5vw, 3rem);
-    row-gap: var(--space-md);
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr) minmax(0, 0.8fr);
+    column-gap: clamp(2rem, 4vw, 3.5rem);
+    row-gap: var(--space-lg);
     align-items: start;
   }
 
-  .intro__head {
-    grid-column: 1 / -1;
-  }
-
-  .intro__lead {
-    grid-column: 1;
-  }
-
   .intro__statement {
-    max-width: none;
+    max-width: 52ch;
   }
 
   .intro__aside {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .intro__focus {
     grid-column: 2;
   }
 
   .intro__figure {
     grid-column: 3;
+    grid-row: auto;
+  }
+}
+
+/* Experience at a glance (home) */
+.glance {
+  display: grid;
+  gap: 1px;
+  margin-block-start: clamp(2rem, 5vw, 3rem);
+  background-color: var(--rule);
+  border: 1px solid var(--rule);
+}
+
+.glance__item {
+  display: grid;
+  gap: var(--space-3xs);
+  align-content: start;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  background-color: var(--panel);
+}
+
+.glance__period {
+  font-size: var(--step--1);
+  font-weight: 500;
+  color: var(--accent-ink, var(--orange-deep));
+}
+
+.glance__role {
+  font-size: var(--step-1);
+  font-weight: 600;
+  line-height: 1.25;
+  margin-block-start: var(--space-3xs);
+}
+
+.glance__org {
+  font-size: var(--step--1);
+  color: var(--muted);
+}
+
+.glance__text {
+  margin-block-start: var(--space-2xs);
+  font-size: var(--step-0);
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.glance__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  margin-block-start: var(--space-md);
+}
+
+.glance__edu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2xs) var(--space-sm);
+  font-size: var(--step-0);
+  color: var(--muted);
+}
+
+@media (min-width: 48rem) {
+  .glance {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -1152,6 +1231,11 @@ a {
     grid-column: span 2;
     grid-row: span 2;
   }
+}
+
+/* Home capabilities: six equal light cards, tags directly under the text. */
+.bento--capabilities .bento__tags {
+  margin-block-start: 0;
 }
 
 /* Flow variants: uniform multi-column bento grids (skills, working principles) */
@@ -1518,6 +1602,16 @@ a {
 
   .work-card--feature .work-card__body {
     padding: clamp(1.75rem, 3vw, 2.75rem);
+  }
+
+  .work-card--feature .work-card__media {
+    aspect-ratio: auto;
+    min-height: 18rem;
+  }
+
+  .work-card--feature .work-card__media > .cover {
+    height: 100%;
+    aspect-ratio: auto;
   }
 }
 
